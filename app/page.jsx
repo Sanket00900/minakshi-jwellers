@@ -15,7 +15,7 @@ export default function Home() {
   const [timeLeft, setTimeLeft] = useState({});
   const [winnersShown, setWinnersShown] = useState(false);
   const [showConfetti, setShowConfetti] = useState(false);
-  const winners = ["11", "9", "47", "24", "97"]; // Replace with actual winners
+  const winners = ["29"]; // Replace with actual winners
 
   const { width, height } = useWindowSize(); // Get the window size for the confetti
 
@@ -75,11 +75,11 @@ export default function Home() {
         src={Logo}
         alt="Shop Logo"
         className={`w-32 h-32 mb-6 animate-bounce ${
-          winnersShown ? "mt-[24rem]" : "mt-[18rem]"
+          winnersShown ? "mt-[19rem]" : "mt-[18rem]"
         }`}
       />
       {!winnersShown ? (
-        <>
+        <div>
           <h1 className="text-4xl text-[#d4af37] uppercase font-bold mb-[2rem]">
             Minakshi Jewellers
           </h1>
@@ -107,11 +107,11 @@ export default function Home() {
           ) : (
             <p className="text-white text-xl">The lucky draw has ended!</p>
           )}
-        </>
+        </div>
       ) : (
-        <>
+        <div className="flex flex-col justify-center items-center">
           <h1 className="text-2xl text-yellow-400 font-bold mb-6 text-center">
-            Winner's Leaderboard
+            Lucky Draw Winner
           </h1>
           <ul className="mb-8 text-white text-xl bg-white bg-opacity-20 p-6 rounded-lg shadow-lg max-w-md w-full">
             {winners.map((winner, index) => (
@@ -127,11 +127,11 @@ export default function Home() {
             <video
               controls
               className="w-full max-w-md rounded-md shadow-md"
-              src="/lucky-draw-video.mp4" // Replace with actual video path
+              src="/vdo.mp4" // Replace with actual video path
               alt="Lucky Draw Video"
             />
           </div>
-        </>
+        </div>
       )}
     </div>
   );
